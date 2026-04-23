@@ -1,0 +1,26 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: ["canidoApiKey"]
+    properties:
+      canidoApiKey:
+        type: string
+        title: CanIDo API Key
+        description: >
+          Your CanIDo API key. Get a free one (10 queries/month) at
+          https://canido-api-production.up.railway.app
+      canidoApiUrl:
+        type: string
+        title: API URL (optional)
+        description: Override the API URL. Defaults to production.
+        default: https://canido-api-production.up.railway.app
+  commandFunction: |-
+    (config) => ({
+      command: 'npx',
+      args: ['-y', '@canido/mcp-server'],
+      env: {
+        CANIDO_API_KEY: config.canidoApiKey,
+        CANIDO_API_URL: config.canidoApiUrl || 'https://canido-api-production.up.railway.app'
+      }
+    })

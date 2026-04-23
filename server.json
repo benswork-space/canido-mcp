@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.benswork-space/canido",
+  "description": "Regulatory intelligence API for AI agents — look up what permits, licenses, and regulations apply for food service businesses (food trucks, restaurants, catering, cottage food) in Austin TX, San Francisco CA, and New York City NY.",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/benswork-space/canido",
+    "source": "github",
+    "subfolder": "mcp-server"
+  },
+  "websiteUrl": "https://canido-api-production.up.railway.app",
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@canido/mcp-server",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "CANIDO_API_KEY",
+          "description": "Your CanIDo API key. Get a free one at https://canido-api-production.up.railway.app (10 queries/month free tier).",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "CANIDO_API_URL",
+          "description": "Override the API URL (defaults to production). Useful for self-hosted deployments.",
+          "isRequired": false,
+          "default": "https://canido-api-production.up.railway.app"
+        }
+      ]
+    }
+  ]
+}

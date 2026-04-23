@@ -1,0 +1,57 @@
+{
+  "name": "@canido/mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for CanIDo — regulatory intelligence API. Ask AI agents what permits and licenses are needed for any business activity in Austin, SF, or NYC.",
+  "main": "dist/index.js",
+  "bin": {
+    "canido-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "permits",
+    "licenses",
+    "regulatory",
+    "business",
+    "food-truck",
+    "restaurant",
+    "catering",
+    "compliance",
+    "canido",
+    "claude",
+    "ai-agent"
+  ],
+  "author": "CanIDo",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benswork-space/canido.git",
+    "directory": "mcp-server"
+  },
+  "homepage": "https://canido-api-production.up.railway.app",
+  "bugs": {
+    "url": "https://github.com/benswork-space/canido/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0"
+  }
+}
